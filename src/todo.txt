@@ -1,0 +1,41 @@
+Notes
+
+
+Todo
+Upgrade to Infinite scrolling?
+Accessibility
+Expandable advanced search (Maybe horsepower, rwd/fwd/awd, whatever)
+Logos for class and type (S1/Rally Monsters)
+Figure out how to use hooks to clean things up.
+**Pictures for each car LOL**
+Recommended tunes
+Style the load more button
+Better transitions on the fullscreen (image loads looks weird)
+Sorting
+Escape to close windows that open
+Left/right/navigation?
+Official description from wiki
+More results button only mounts when there are more results (figure out how to )
+Move the car rendering component into its own hook
+
+
+Bugs
+Fix logos
+X jumps when you expand the box
+Citroen only car has no class so it won't show up. Not out yet.
+Eagle logo is wrong
+
+
+In Progress
+Better styling
+Logos for manufacturers (Mostly done, could optimize images)
+
+
+
+Done
+05/11
+added Logos
+added fullscreen on click card
+Fixed Disable clarable
+1970 Datsun 510 shows up under ATS
+MG shows AMG and Mercedes-AMG / Rover has land rover

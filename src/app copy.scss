@@ -1,0 +1,308 @@
+/*theme colors*/
+$bg-color: black;
+$bg-second: #14213d;
+$accent-color: #fca311;
+$text1-color: #ffffff;
+$text2-color: #e5e5e5;
+
+/*global*/
+body {
+  font-family: "Rokkitt", serif;
+  font-size: larger;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(74, 74, 79, 1) 55%,
+    rgba(101, 101, 101, 1) 100%
+  );
+  color: $text1-color;
+}
+
+h1 {
+  font-family: "Oswald", sans-serif;
+}
+
+h2 {
+  font-family: "Oswald", sans-serif;
+}
+
+h3 {
+  font-family: "Oswald", sans-serif;
+}
+
+h4 {
+  font-family: "Oswald", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/*search area*/
+.filter {
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.search-area {
+  width: 100%;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.search-bar {
+  min-width: 50%;
+  max-width: 970px;
+}
+
+.select-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.select-drop {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.grade-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.grade {
+  padding-left: 1rem;
+}
+
+/*results area*/
+.cars {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.car {
+  margin: 2rem;
+  padding: 1rem;
+  background-color: $bg-second;
+  max-width: 400px;
+  border-radius: 1rem;
+  min-width: 25vw;
+  border-style: solid;
+  border-color: $accent-color;
+}
+
+.car h2 {
+  text-align: center;
+}
+
+.mini-stats {
+  padding-top: 1rem;
+}
+
+.logo {
+  max-width: 200px;
+  max-height: 200px;
+  float: right;
+  padding-bottom: 1rem;
+  align-self: center;
+}
+
+.button-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+.load-button {
+  width: 600px;
+  height: 60px;
+  max-width: 80%;
+  padding-bottom: 6rem;
+  border-radius: 15px;
+  background-color: $text2-color;
+  color: $bg-second;
+  transition: all 0.3s ease;
+}
+
+/*Expanded card*/
+/*mdiv is the X to close cards*/
+#mdiv {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: fixed;
+  top: 5vh;
+  right: 5vw;
+}
+
+.mdiv {
+  height: 25px;
+  width: 2px;
+  margin-left: 12px;
+  background-color: $accent-color;
+  transform: rotate(45deg);
+  z-index: 1;
+  cursor: pointer;
+  grid-area: close;
+}
+
+.md {
+  height: 25px;
+  width: 2px;
+  background-color: $accent-color;
+  transform: rotate(90deg);
+  z-index: 2;
+}
+
+.carpic {
+  align-self: center;
+
+  max-width: 95%;
+  max-height: 95%;
+  grid-area: carpic;
+  justify-self: center;
+}
+
+.rarity {
+  text-align: center;
+  border-radius: 2rem;
+  justify-self: center;
+  min-width: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  grid-area: rarity;
+  max-width: 500px;
+}
+.common {
+  background-color: green;
+}
+
+.rare {
+  background-color: blue;
+}
+
+.epic {
+  background-color: purple;
+}
+
+.legendary {
+  background-color: gold;
+}
+
+/* expand card css*/
+.expanded-card {
+  position: fixed;
+  top: 2.5vh;
+  left: 2.5vw;
+  width: 95vw;
+  height: 95vh;
+  z-index: 1;
+  background-color: $bg-second;
+  border-style: solid;
+  border-width: 2px;
+  border-color: $accent-color;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-areas:
+    "logo logo logo logo . . . . close"
+    "logo logo logo logo carpic  carpic carpic carpic carpic"
+    "head head head head carpic carpic carpic carpic carpic"
+    "rarity rarity rarity rarity carpic carpic carpic carpic carpic"
+    "stat stat stat stat  carpic carpic carpic carpic carpic"
+    "stat stat stat stat . list1 list1 list2 list2"
+    "tunes tunes tunes tunes . list1 list1 list2 list2";
+}
+// grid-template-areas:
+// "logo logo logo . . . . . close"
+// "logo logo logo . carpic  carpic carpic carpic carpic"
+// "head head head . carpic carpic carpic carpic carpic"
+// "rarity rarity rarity . carpic carpic carpic carpic carpic"
+// "list1 list1 list2 list2 carpic carpic carpic carpic carpic"
+// "list1 list1 list2 list2 stat stat stat stat stat"
+// "tunes tunes tunes tunes stat stat stat stat stat";
+// }
+
+.expanded-card-h {
+  grid-area: head;
+  text-align: center;
+  margin: 0px;
+}
+
+.logo-open {
+  max-width: 300px;
+  max-height: 250px;
+  grid-area: logo;
+  transition: 0.5s;
+  align-self: center;
+  justify-self: center;
+}
+.exp-list1 {
+  grid-area: list1;
+  padding: 3rem;
+}
+.exp-list2 {
+  grid-area: list2;
+  padding: 3rem;
+}
+.stat-table {
+  grid-area: stat;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 1px $accent-color;
+  border-style: solid;
+  max-height: 50%;
+  justify-self: center;
+  align-self: center;
+}
+.stat-table td {
+}
+.tunes {
+  grid-area: tunes;
+}
+
+.stat-out {
+  justify-self: left;
+  border-style: solid;
+  border-width: 2px;
+  border-color: $text2-color;
+  height: 30px;
+  width: 100%;
+  border-radius: 30px;
+}
+
+.stat-in {
+  justify-self: left;
+  background-color: $accent-color;
+  height: 30px;
+  border-radius: 30px;
+  padding: 0%;
+}
+.stat-left {
+  padding-right: 4rem;
+}
+.stat-right {
+  width: 100%;
+}
+
+.stat {
+  padding: 0px;
+  padding-left: 2rem;
+
+  margin: 0px;
+  height: 100%;
+}

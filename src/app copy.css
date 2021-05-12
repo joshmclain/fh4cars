@@ -176,6 +176,8 @@ ul {
           transform: rotate(45deg);
   z-index: 1;
   cursor: pointer;
+  -ms-grid-row: 1;
+  -ms-grid-column: 9;
   grid-area: close;
 }
 
@@ -190,27 +192,22 @@ ul {
 
 .carpic {
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
       align-self: center;
-  padding-top: 4rem;
-  max-width: 800px;
-  max-height: 500px;
+  max-width: 95%;
+  max-height: 95%;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 5;
   grid-area: carpic;
-  -ms-grid-column-align: center;
       justify-self: center;
 }
 
 .rarity {
-  border-radius: 2rem;
-  margin-left: 3rem;
-  margin-right: 3rem;
-  grid-area: rarity;
-  max-width: 500px;
-  min-width: 50%;
   text-align: center;
+  border-radius: 2rem;
   justify-self: center;
-  -ms-flex-item-align: center;
-      align-self: center;
+  min-width: 50%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -220,6 +217,13 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: rarity;
+  max-width: 500px;
 }
 
 .common {
@@ -251,46 +255,29 @@ ul {
   border-width: 2px;
   border-color: #fca311;
   border-radius: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[9];
+      grid-template-columns: repeat(9, 1fr);
+      grid-template-areas: "logo logo logo logo . . . . close" "logo logo logo logo carpic  carpic carpic carpic carpic" "head head head head carpic carpic carpic carpic carpic" "rarity rarity rarity rarity carpic carpic carpic carpic carpic" "stat stat stat stat  carpic carpic carpic carpic carpic" "stat stat stat stat . list1 list1 list2 list2" "tunes tunes tunes tunes . list1 list1 list2 list2";
 }
 
 .expanded-card-h {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
   grid-area: head;
   text-align: center;
   margin: 0px;
-  padding-top: 4rem;
-  padding-bottom: 2rem;
-}
-
-.left-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  min-width: 50%;
-}
-
-.right-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  min-width: 50%;
 }
 
 .logo-open {
   max-width: 300px;
   max-height: 250px;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
   grid-area: logo;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -299,29 +286,31 @@ ul {
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
-  padding-bottom: 2rem;
 }
 
 .exp-list1 {
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 6;
+  -ms-grid-column-span: 2;
   grid-area: list1;
   padding: 3rem;
 }
 
 .exp-list2 {
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 2;
   grid-area: list2;
   padding: 3rem;
 }
 
-.stats-lists {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
 .stat-table {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
   grid-area: stat;
   margin-left: 3rem;
   margin-right: 3rem;
@@ -335,6 +324,13 @@ ul {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+.tunes {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: tunes;
 }
 
 .stat-out {
@@ -371,4 +367,4 @@ ul {
   margin: 0px;
   height: 100%;
 }
-/*# sourceMappingURL=App.css.map */
+/*# sourceMappingURL=app copy.css.map */
