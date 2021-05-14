@@ -66,7 +66,7 @@ const Carbox = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get("cars.json");
+        const response = await axios.get("./cars.json");
         //setCarData is just all the data I have in the file
         setCarData(response.data);
         console.log(response.data);
@@ -130,9 +130,50 @@ const Carbox = () => {
   const showMoreItems = () => {
     setVisible((prevValue) => prevValue + 25);
   };
+let filteredResults = carData
+.filter((val) => {
+  if (checked.indexOf(val["Class"]) > -1) {
+    if (searchTerm == "" && searchMake == "" && searchType == "") {
+      return val;
+    } else if (
+      (searchTerm == "" ||
+        val.Makes.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        val.Nickname.toLowerCase().includes(
+          searchTerm.toLowerCase()
+        ) ||
+        val.Models.toString()
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase()) ||
+        val["Car Type"]
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase()) ||
+        val.Year.toString()
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase())) &&
+      (searchMake === null ||
+        searchMake === "" ||
+        val.Makes.toLowerCase() ==
+          (searchMake || "").toLowerCase()) &&
+      (searchModel === "" ||
+        searchMake === null ||
+        searchModel === null ||
+        val.Models.toLowerCase().includes(
+          (searchModel || "").toLowerCase()
+        )) &&
+      (searchType === "" ||
+        searchType === null ||
+        val["Car Type"]
+          .toLowerCase()
+          .includes((searchType || "").toLowerCase()))
+    )
+      return val;
+  }
+})
+
 
   return (
     <div>
+
       <div className="filter">
         <ThemeProvider theme={darkTheme}>
           <FormGroup row>
@@ -223,47 +264,7 @@ const Carbox = () => {
       </div>
 
       <div className="cars">
-        {carData
-          .filter((val) => {
-            if (checked.indexOf(val["Class"]) > -1) {
-              if (searchTerm == "" && searchMake == "" && searchType == "") {
-                return val;
-              } else if (
-                (searchTerm == "" ||
-                  val.Makes.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                  val.Nickname.toLowerCase().includes(
-                    searchTerm.toLowerCase()
-                  ) ||
-                  val.Models.toString()
-                    .toLowerCase()
-                    .includes(searchTerm.toLowerCase()) ||
-                  val["Car Type"]
-                    .toLowerCase()
-                    .includes(searchTerm.toLowerCase()) ||
-                  val.Year.toString()
-                    .toLowerCase()
-                    .includes(searchTerm.toLowerCase())) &&
-                (searchMake === null ||
-                  searchMake === "" ||
-                  val.Makes.toLowerCase() ==
-                    (searchMake || "").toLowerCase()) &&
-                (searchModel === "" ||
-                  searchMake === null ||
-                  searchModel === null ||
-                  val.Models.toLowerCase().includes(
-                    (searchModel || "").toLowerCase()
-                  )) &&
-                (searchType === "" ||
-                  searchType === null ||
-                  val["Car Type"]
-                    .toLowerCase()
-                    .includes((searchType || "").toLowerCase()))
-              )
-                return val;
-            }
-          })
-          .slice(0, visible)
-          .map((car) => (
+        {filteredResults.slice(0, visible).map((car) => (
             <Car
               key={car["Unique ID"]}
               nickname={car.Nickname}
@@ -306,11 +307,15 @@ const Carbox = () => {
               wthp={car["Wt / HP"]}
               pcnt={car["%"]}
               disp={car.Displ}
+              uniqueId={car["Unique ID"]}
             />
-          ))}
+          ))
+          }
       </div>
 
+      {filteredResults.length>visible&&
       <div className="button-box">
+
         <motion.button
           className="load-button"
           whileHover={{ scale: 1.1 }}
@@ -320,6 +325,7 @@ const Carbox = () => {
           <h1>More</h1>
         </motion.button>
       </div>
+    }
     </div>
   );
 };

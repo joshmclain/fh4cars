@@ -2,6 +2,8 @@
   "name": "fh4cars",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://joshmclain.github.io/fh4cars",
+
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",

@@ -60,6 +60,7 @@ ul {
 .select-area {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   padding: 1rem;
 }
@@ -74,6 +75,7 @@ ul {
   display: flex;
   justify-content: center;
   padding: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .grade {
@@ -97,6 +99,8 @@ ul {
   min-width: 25vw;
   border-style: solid;
   border-color: $accent-color;
+  will-change: transform;
+  border-width: 1px;
 }
 
 .car h2 {
@@ -140,8 +144,8 @@ ul {
   height: 30px;
   cursor: pointer;
   position: fixed;
-  top: 5vh;
-  right: 5vw;
+  top: 3vh;
+  right: 2vw;
 }
 
 .mdiv {
@@ -204,6 +208,7 @@ ul {
 }
 
 /* expand card css*/
+
 .expanded-card {
   position: fixed;
   top: 2.5vh;
@@ -213,12 +218,25 @@ ul {
   z-index: 1;
   background-color: $bg-second;
   border-style: solid;
-  border-width: 2px;
+  border-width: 1px;
   border-color: $accent-color;
   border-radius: 1rem;
   display: flex;
   flex-wrap: wrap;
+  will-change: transform;
 }
+@media (max-width: 900px){ 
+  .expanded-card    { 
+      height:unset !important;
+      position: sticky !important;
+  }
+  .carpic {
+    max-width: 90%;
+  }
+} 
+
+
+
 .expanded-card-h {
   grid-area: head;
   text-align: center;
@@ -253,14 +271,19 @@ ul {
 }
 .exp-list1 {
   grid-area: list1;
-  padding: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  min-width: 40%;
 }
 .exp-list2 {
   grid-area: list2;
-  padding: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  min-width: 40%;
 }
 .stats-lists {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: space-around;
 }

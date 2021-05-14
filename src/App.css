@@ -63,6 +63,8 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -83,6 +85,8 @@ ul {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0.5rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .grade {
@@ -110,6 +114,8 @@ ul {
   min-width: 25vw;
   border-style: solid;
   border-color: #fca311;
+  will-change: transform;
+  border-width: 1px;
 }
 
 .car h2 {
@@ -163,8 +169,8 @@ ul {
   height: 30px;
   cursor: pointer;
   position: fixed;
-  top: 5vh;
-  right: 5vw;
+  top: 3vh;
+  right: 2vw;
 }
 
 .mdiv {
@@ -248,7 +254,7 @@ ul {
   z-index: 1;
   background-color: #14213d;
   border-style: solid;
-  border-width: 2px;
+  border-width: 1px;
   border-color: #fca311;
   border-radius: 1rem;
   display: -webkit-box;
@@ -256,6 +262,18 @@ ul {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  will-change: transform;
+}
+
+@media (max-width: 900px) {
+  .expanded-card {
+    height: unset !important;
+    position: -webkit-sticky !important;
+    position: sticky !important;
+  }
+  .carpic {
+    max-width: 90%;
+  }
 }
 
 .expanded-card-h {
@@ -304,18 +322,24 @@ ul {
 
 .exp-list1 {
   grid-area: list1;
-  padding: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  min-width: 40%;
 }
 
 .exp-list2 {
   grid-area: list2;
-  padding: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  min-width: 40%;
 }
 
 .stats-lists {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 100%;
   -ms-flex-pack: distribute;
       justify-content: space-around;
