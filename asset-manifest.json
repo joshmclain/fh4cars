@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/fh4cars/static/css/main.13614426.chunk.css",
+    "main.css": "/fh4cars/static/css/main.c8095477.chunk.css",
     "main.js": "/fh4cars/static/js/main.e7dd7097.chunk.js",
     "main.js.map": "/fh4cars/static/js/main.e7dd7097.chunk.js.map",
     "runtime-main.js": "/fh4cars/static/js/runtime-main.75fc4362.js",
@@ -10,13 +10,13 @@
     "static/js/3.2339728d.chunk.js": "/fh4cars/static/js/3.2339728d.chunk.js",
     "static/js/3.2339728d.chunk.js.map": "/fh4cars/static/js/3.2339728d.chunk.js.map",
     "index.html": "/fh4cars/index.html",
-    "static/css/main.13614426.chunk.css.map": "/fh4cars/static/css/main.13614426.chunk.css.map",
+    "static/css/main.c8095477.chunk.css.map": "/fh4cars/static/css/main.c8095477.chunk.css.map",
     "static/js/2.254ceb8c.chunk.js.LICENSE.txt": "/fh4cars/static/js/2.254ceb8c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.75fc4362.js",
     "static/js/2.254ceb8c.chunk.js",
-    "static/css/main.13614426.chunk.css",
+    "static/css/main.c8095477.chunk.css",
     "static/js/main.e7dd7097.chunk.js"
   ]
 }
